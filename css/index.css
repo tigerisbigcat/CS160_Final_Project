@@ -59,3 +59,12 @@ header img {
     font-size: 70px;
     text-align: center;
 }
+
+.index_body {
+    padding-top: 23%;
+}
+
+.index_body img {
+    padding-left: 2%;
+    width: 95%;
+}
