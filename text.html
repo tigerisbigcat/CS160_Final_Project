@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
+
+
+<head>
+
+    <body>
+        <form>
+            <input type="search" id="query" onkeyup="searchFood()">
+        </form>
+        <div class="container" id="result">
+   
+            <div class="row">
+
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+
+
+        //const { calorieAPI } = require('./config.json');
+        function searchFood() {
+            $('#result').find('.nested').remove();
+            var query = document.getElementById("query").value;
+            console.log(query);
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.calorieninjas.com/v1/nutrition?query=' + query,
+                headers: { 'X-Api-Key': "8Wt8ILcbIE0Vvqwjmy9HLg==gCb14TZErX8dL2Ff"},
+                contentType: 'application/json',
+                success: function(result) {
+                    for (i = 0; i < result.items.length; i++) {
+                        console.log(result.items[i]);
+                        $("#result").append($("<div>" +
+                            "<p class='nested'> ========================================================= </p>" +
+                            "<p class='nested'>name:" + result.items[i].name + "</p>" +
+                            "<p class='nested'>sugar(g):" + result.items[i].sugar_g + "</p>" +
+                            "<p class='nested'>fiber(g):" + result.items[i].fiber_g + "</p>" +
+                            "<p class='nested'>serving size(g):" + result.items[i].serving_size_g + "</p>" +
+                            "<p class='nested'>sodium(mg):" + result.items[i].sodium_mg + "</p>" +
+                            "<p class='nested'>potassium(mg)" + result.items[i].potassium_mg + "</p>" +
+                            "<p class='nested'>saturated fat(g):" + result.items[i].fat_saturated_g + "</p>" +
+                            "<p class='nested'>total fat(g):" + result.items[i].fat_total_g + "</p>" +
+                            "<p class='nested'>calories:" + result.items[i].calories + "</p>" +
+                            "<p class='nested'>cholesterol(mg):" + result.items[i].cholesterol_mg + "</p>" +
+                            "</div>")
+                        )
+                    }
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+        }
+
+
+    </script>
+</head>
+</html>
