@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nutrition Calculator</title>
+    <title>Query Food</title>
     <link rel="stylesheet" href="index.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -28,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <p style="padding-left: 6%">Nutrition Calculator</p>
+        <p style="padding-left: 6%"></p>
         <div id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <ul class="d-flex">
@@ -41,35 +41,52 @@
     <main>
       <div class="container overflow-auto">
         <div class="row justify-content-md-left">
-            <div class="col-12">
-            <div class="search-bar">
-              <form action="searchfood.html">
-                <input class="round center" type="search" style="background-color:white;">
-              </form>
+          <div class="search-bar">
+            <form action="searchfood.html">
+              <input class="round center" type="search" style="background-color:white;">
+            </form>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/bubbles.jpg" class="img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Quaker Oats Insant Oatmeal 8oz</h5>
+                <p class="card-text">calories: 200 cals<br>protein: 4 g<br>fat: 0 g <br>carbs: 24 g</p>
+              </div>
             </div>
           </div>
         </div>
-          <div class="results">
-            <div class="result-query center">
-              <div class="food-image">
-                <img src="assets/bubbles.jpg" width="400" height="360" class="food-image"/>
-              </div> 
-              <div class="food-title">Amazon Instant Oats
-                <div class="nutrition">calories: 200cal<br>protein: 4g<br>fat: 0g <br>carbs: 24g</div> 
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/bubbles.jpg" class="img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Amazon Basics Maple Syrup Oatmeal 20oz</h5>
+                <p class="card-text">calories: 280 cals<br>protein: 16 g<br>fat: 6 g <br>carbs: 4 g</p>
               </div>
             </div>
-            <div class="food-divider"></div>
-            <div class="result-query center">
-              <div class="food-image">
-                <img src="assets/bubbles.jpg" width="400" height="360" class="food-image"/>
-              </div> 
-              <div class="food-title">DOG?!?
-                <div class="nutrition">calories: 1000cal<br>protein: 99g<br>fat: 0g <br>carbs: 0g</div> 
-              </div>
-              
-            </div>
-            <div class="food-divider"></div>
+          </div>
         </div>
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/bubbles.jpg" class="img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Quaker Oats Steel Oats</h5>
+                <p class="card-text">calories: 160 cals<br>protein: 30g<br>fat: 10 g <br>carbs: 0 g</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </main>
   </body>

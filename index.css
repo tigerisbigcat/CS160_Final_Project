@@ -165,7 +165,7 @@ footer {
     border: 1px #000 solid;
     padding: 5px 5px 5px 25px;
     height: 90px;
-    width: 80%;
+    width: 100%;
   }
 
 .add-button {
@@ -174,7 +174,6 @@ footer {
     width: 100px;
     border-radius: 15px;
     border: 1px #000 solid; 
-    height: 80px;
 }
 
 .search-bar {
