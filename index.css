@@ -194,3 +194,7 @@ header img {
     padding-left: 2%;
     width: 95%;
 }
+
+.nutrition-row .row {
+    padding-bottom: 10px;
+}
