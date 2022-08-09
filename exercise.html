@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>CaloriesCalculator</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/exercise.css" />
     <script src="js/index.js"></script>
   </head>
 
@@ -14,28 +14,31 @@
 
   <header>
     <img src="images/list.png" alt="list" />
-    <div class="head"><p>Summary</p></div>
+    <div class="head"><p>Exercise</p></div>
   </header>
 
   <footer>
-    <div
-      class="boxfooter"
-      οnclick="window.location.href ='/index.html';return false"
-    >
-      <img src="images/summary.png" alt="summary" />
-      <div class="boxfootertext">Summary</div>
+    <div class="boxfooter">
+      <a href="index.html">
+        <img src="images/summary.png" alt="summary" />
+        <div class="boxfootertext">Summary</div></a
+      >
     </div>
-    <div class="boxfooter" οnclick="window.open('nutrition.html','_self')">
-      <img src="images/nutrition.png" alt="nutrition" />
-      <div class="boxfootertext">Nutrition</div>
+    <div class="boxfooter">
+      <a href="nutrition.html">
+        <img src="images/nutrition.png" alt="nutrition" />
+        <div class="boxfootertext">Nutrition</div></a
+      >
     </div>
-    <div class="boxfooter" οnclick="window.open('exercise.html','_self')">
+    <div class="boxfooter" id="exercise">
       <img src="images/exercise.png" alt="exercise" />
       <div class="boxfootertext">Exercise</div>
     </div>
-    <div class="boxfooter" οnclick="window.open('more.html','_self')">
-      <img src="images/more.png" alt="more" />
-      <div class="boxfootertext">More</div>
+    <div class="boxfooter">
+      <a href="more.html">
+        <img src="images/more.png" alt="more" />
+        <div class="boxfootertext">More</div></a
+      >
     </div>
   </footer>
 </html>
