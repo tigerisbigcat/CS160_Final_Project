@@ -4,6 +4,12 @@
       width: 100%;
     }
   }
+
+body {
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
   
   main {
     display: flex;
@@ -17,31 +23,60 @@
   
 .navbar {
     background-color: rgb(204, 224, 252);
-    height: 70px;
+    height: 80px;
+    position: fixed;
   }
 
 .navbar p {
-    font-size: 30px;
+    font-size: 35px;
     margin-top: 3%;
     margin-bottom: 1rem;
-    padding-left: 30%;
+    width: 80%;
+    letter-spacing: -2px;
 }
 
+/* 三 icon setting */
 .container-fluid {
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 5);
-    margin-top: calc(var(--bs-gutter-x) * (-0.5));
+    /* padding-right: calc(var(--bs-gutter-x) * 0.5); */
+    /* padding-left: calc(var(--bs-gutter-x) * 5); */
+    margin-top: calc(var(--bs-gutter-x) * (-0.3));
+    text-align: center;
 }
 
 .bi-list {
     font-size: 40px;
 }
 
+/* header {
+    width: 100%;
+    height: 13vh;
+    margin-top: -80px;
+    background-color: rgb(204, 224, 252);
+    position: fixed;
+}  */
 
-body {
-    margin: 0px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
+header img {
+    padding-top: 13%;
+    padding-right: 5%;
+    height: 40%;
+    float: right;
+}
+
+.head {
+    padding-top: 7%;
+    font-size: 70px;
+    font-weight:400;
+    letter-spacing: -4px;
+    text-align: center;
+}
+
+.index_body {
+    padding-top: 0;
+}
+
+.index_body img {
+    padding-left: 2%;
+    width: 95%;
 }
 
 footer {
@@ -83,7 +118,7 @@ footer {
 
 .boxfootertext {
     margin-left: 5%;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
     
 }
@@ -158,6 +193,7 @@ footer {
     width: 347px;
 }
 
+<<<<<<< Updated upstream
 /* header {
     width: 100%;
     height: 13vh;
@@ -194,3 +230,5 @@ header img {
     padding-left: 2%;
     width: 95%;
 }
+=======
+>>>>>>> Stashed changes
