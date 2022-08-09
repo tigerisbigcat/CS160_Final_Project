@@ -44,6 +44,12 @@ main {
     text-align: center;
 }
 
+.navbar p #nutrition_p {
+    color: blue;
+    width: 60%;
+    padding-left: 0;
+}
+
 .bi-list {
     font-size: 40px;
 }
@@ -159,7 +165,7 @@ footer {
     border: 1px #000 solid;
     padding: 5px 5px 5px 25px;
     height: 90px;
-    width: 800px;
+    width: 100%;
   }
 
 .add-button {
@@ -168,15 +174,12 @@ footer {
     width: 100px;
     border-radius: 15px;
     border: 1px #000 solid; 
-    height: 80px;
 }
 
 .search-bar {
     position: relative;
-    width: 800px;
-    height: 150px;
-    left: 10%;
-    top: 11.0vh;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .search-bar-saved-meals {
@@ -226,119 +229,15 @@ footer {
     padding-bottom: 10px;
 }
 
-
-
-/* exercise page */
-.exercise-top img {
-    width: 100%;
-    height: 40%;
-}
-
-.row > div {
-    margin-top: 3%;
-    flex-basis: 50%;
-    min-width: 25%;
-    /* width: 40%;
-    height: 40%; */
-    display: flex;
-    flex-direction: row
-}
-
-.calories-box {
-    
-    margin-left: 4%;
-    background-color: rgb(235, 236, 237);
-}
-
-.exercise-goal > div {
-    width: 80%;
-
-}
-
-.container {
-    padding-bottom: 10%;
-}
-
-.exercise_background {
-	margin-top: 5%;
-	left: 5%;
-	width: 100%;
-	height: 100%;
-    padding: 5%;
-	border-radius: 4px;
-	background:rgba(247.56,247.56,247.56,1);
-}
-
-.exercise_background > div {
-    height: 30%;
-	overflow: hidden;
-	font-size: 11.5px;
-	text-align: left;
-}
-
-#excercise_detected {
-    font-weight: bold;
-    height: 16%;
-	overflow: hidden;
-	font-size: 11.5px;
-	text-align: left;
-}
-
-.standar-goal-background {
-    background-color: rgb(255, 255, 255);
-}
-
-.standar-goal-box {
-    background-color: rgb(243, 242, 242);
-
-}
-
-.standar-goal-box img {
-    width: 100%;
-    height: 100%;
-}
-
-#_6_hrs_70_ {
-	width: 100%;
-	height: 50%;
-	overflow: hidden;
-	font-size: 18px;
-	text-align: left;
-}
-
-
-#stand_goal {
-	top: 476px;
-	left: 254px;
-	width: 66px;
-	height: 40px;
-	overflow: hidden;
-	font-size: 18px;
-	text-align: center;
-}
-
-
-
-
-/* bmi */
-
-.bmi_input {
-    display: flex;
-}
-
-.bmi_index {
-    position: absolute;
-    font-size: 60px;
-    bottom: 1px;
-    width: 100%;
-    text-align: center;
-}
-
-.center-horizontal {
-    width: 50%;
-    margin: auto;
-}
-
-.input {
-    width: 100px;
-}
+.btn-primary {
+    --bs-btn-color: var(--bs-black) !important;
+    --bs-btn-bg: #CBE2F2 !important;
+    --bs-btn-border-color: #CBE2F2 !important;
+    --bs-btn-hover-color: var(--bs-black) !important;
+    --bs-btn-hover-bg: rgba(203, 226, 242, 0.6) !important;
+    --bs-btn-hover-border-color: rgba(203, 226, 242, 0.6) !important;
+    --bs-btn-focus-shadow-rgb: rgba(203, 226, 242, 0.8) !important;
+    --bs-btn-active-color: var(--bs-btn-hover-color) !important;
+    --bs-btn-active-bg: rgba(203, 226, 242, 0.4) !important;
+    --bs-btn-active-border-color: rgba(203, 226, 242, 0.4) !important;
+  }
