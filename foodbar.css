@@ -11,7 +11,7 @@
     padding: 5px 5px 5px 25px;
     height: 90px;
     width: 800px;
-  }
+}
 
 .add-button {
     float: right;   
@@ -20,6 +20,27 @@
     border-radius: 15px;
     border: 1px #000 solid; 
     height: 80px;
+}
+
+.nutrition {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    height: 80px;
+}
+
+.results {
+    position: relative;
+    top: 250px;
+}
+
+.result-query {
+    display: block;
+    position: relative; 
+    padding-bottom: 20px;   
+    width: 900px;
+    height: 360px;
+    border: 1px #000 solid;
 }
 
 .search-bar {
@@ -46,6 +67,7 @@
     font-size: 48pt;
 }
 
+
 .center { /*centers an element*/
     position: relative;
     top: 50%;
@@ -65,4 +87,27 @@
     height: 100px;
     top: 200px;
     width: 347px;
+}
+
+.food-image {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.food-divider {
+    display: block;
+    position: relative;
+    padding-top: 20px;
+    border-top: 12px solid #bbb;
+}
+
+.food-title {
+    display: block;
+    position: relative;
+    float: left;
+    left: 5%;
+    font-size: 32pt;
+    max-width: 500px;
+    top: 20px;
 }
