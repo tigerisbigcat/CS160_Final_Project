@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
 }
   
-  main {
+main {
     display: flex;
     flex-wrap: nowrap;
     height: 80vh;
@@ -33,6 +33,7 @@ body {
     margin-bottom: 1rem;
     width: 80%;
     letter-spacing: -2px;
+    padding-left: 10%;
 }
 
 /* 三 icon setting */
@@ -70,13 +71,36 @@ header img {
     text-align: center;
 }
 
+/* header {
+    width: 100%;
+    height: 13vh;
+    margin-top: -80px;
+    background-color: rgb(204, 224, 252);
+    position: fixed;
+}  */
+
+header img {
+    padding-top: 13%;
+    padding-right: 5%;
+    height: 40%;
+    float: right;
+}
+
+.head {
+    padding-top: 7%;
+    font-size: 70px;
+    font-weight:400;
+    letter-spacing: -4px;
+    text-align: center;
+}
+
 .index_body {
     padding-top: 0;
 }
 
 .index_body img {
-    padding-left: 2%;
-    width: 95%;
+    padding-left: 1.5%;
+    width: 100%;
 }
 
 footer {
@@ -193,42 +217,7 @@ footer {
     width: 347px;
 }
 
-<<<<<<< Updated upstream
-/* header {
-    width: 100%;
-    height: 13vh;
-    margin-top: -80px;
-    background-color: rgb(204, 224, 252);
-    position: fixed;
-}  */
-
-header img {
-    padding-top: 13%;
-    padding-right: 5%;
-    height: 40%;
-    float: right;
-}
-
-.head {
-    padding-top: 7%;
-    font-size: 70px;
-    font-weight:400;
-    letter-spacing: -4px;
-    text-align: center;
-}
-
-.index_body {
-    padding-top: 23%;
-}
-
-.index_body img {
-    padding-left: 2%;
-    width: 95%;
-}
-
 .image-plain img {
     padding-left: 2%;
     width: 95%;
 }
-=======
->>>>>>> Stashed changes
