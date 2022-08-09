@@ -240,4 +240,8 @@ footer {
     --bs-btn-active-color: var(--bs-btn-hover-color) !important;
     --bs-btn-active-bg: rgba(203, 226, 242, 0.4) !important;
     --bs-btn-active-border-color: rgba(203, 226, 242, 0.4) !important;
-  }
+}
+
+.alert {
+    --bs-alert-border: 1px solid #000000 !important;
+}
