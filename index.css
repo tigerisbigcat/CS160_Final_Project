@@ -165,7 +165,7 @@ footer {
     border: 1px #000 solid;
     padding: 5px 5px 5px 25px;
     height: 90px;
-    width: 800px;
+    width: 80%;
   }
 
 .add-button {
@@ -179,10 +179,8 @@ footer {
 
 .search-bar {
     position: relative;
-    width: 800px;
-    height: 150px;
-    left: 10%;
-    top: 11.0vh;
+    padding-top: 80px;
+    padding-bottom: 30px;
 }
 
 .search-bar-saved-meals {
