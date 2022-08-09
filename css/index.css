@@ -39,6 +39,75 @@ footer {
     
 }
 
+.entry {
+    position: relative;
+    padding-top: 30px;
+    width: 810px;
+    font-size: 48pt;
+}
+
+.round {
+    border-radius: 35px;
+    border: 1px #000 solid;
+    padding: 5px 5px 5px 25px;
+    height: 90px;
+    width: 800px;
+  }
+
+.add-button {
+    float: right;   
+    position: relative;
+    width: 100px;
+    border-radius: 15px;
+    border: 1px #000 solid; 
+    height: 80px;
+}
+
+.search-bar {
+    position: relative;
+    width: 800px;
+    height: 150px;
+    left: 10%;
+    top: 11.0vh;
+}
+
+.search-bar-saved-meals {
+    position: absolute;
+    top: 350px;
+    right: 10%;
+}
+
+.search-bar-history {
+    position: absolute;
+    top: 350px;
+    left: 10%;
+}
+
+.search-href {
+    font-size: 48pt;
+}
+
+.center { /*centers an element*/
+    position: relative;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, 0%);
+  }
+
+.food-list {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+}
+
+.food-query{
+    position: relative;
+    display: block;
+    height: 100px;
+    top: 200px;
+    width: 347px;
+}
+
 header {
     width: 100%;
     height: 13vh;
