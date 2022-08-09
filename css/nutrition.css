@@ -67,6 +67,8 @@ header img {
 .head {
     padding-top: 7%;
     font-size: 70px;
+    font-weight:400;
+    letter-spacing: -4px;
     text-align: center;
 }
 
