@@ -1,0 +1,309 @@
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width: 100%;
+    }
+  }
+
+body {
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+  
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 80vh;
+    height: -webkit-fill-available;
+    max-height: 80vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+.navbar {
+    background-color: rgb(204, 224, 252);
+    height: 80px;
+    position: fixed;
+  }
+
+.navbar p {
+    font-size: 35px;
+    margin-top: 3%;
+    margin-bottom: 1rem;
+    width: 78%;
+    letter-spacing: -2px;
+    padding-left: 10%;
+}
+
+/* 三 icon setting */
+.container-fluid {
+    /* padding-right: calc(var(--bs-gutter-x) * 0.5); */
+    /* padding-left: calc(var(--bs-gutter-x) * 5); */
+    margin-top: calc(var(--bs-gutter-x) * (-0.3));
+    text-align: center;
+}
+
+.navbar p #nutrition_p {
+    color: blue;
+    width: 60%;
+    padding-left: 0;
+}
+
+.bi-list {
+    font-size: 40px;
+}
+
+header img {
+    padding-top: 13%;
+    padding-right: 5%;
+    height: 40%;
+    float: right;
+}
+
+.head {
+    padding-top: 7%;
+    font-size: 70px;
+    font-weight:400;
+    letter-spacing: -4px;
+    text-align: center;
+}
+
+.index_body {
+    padding-top: 0;
+}
+
+.index_body img {
+    padding-left: 1%;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(204, 224, 252);
+
+    padding-bottom: 1px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-flow: row;
+}
+
+.boxfooter {
+    width: 100%;
+    height: 100%;
+    margin-left: 2px;
+}
+
+.boxfooter a {
+    text-decoration: none;
+    color: black;
+}
+
+#summary, #exercise, #more, #nutrition {
+    background-color: aliceblue;
+}
+
+.boxfooter:hover {
+    background-color: aliceblue;
+}
+
+.boxfooter img {
+    margin-top: 8%;
+    margin-left: 30%;
+    height: 50%;
+}
+
+.boxfootertext {
+    margin-left: 5%;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+/* exercise page */
+.exercise-top img {
+    width: 100%;
+    height: 40%;
+}
+
+.row > div {
+    margin-top: 3%;
+    flex-basis: 48%;
+    min-width: 25%;
+    display: flex;
+    flex-direction: row
+}
+
+.calories-box {
+    
+    margin-left: 4%;
+    background-color: rgb(235, 236, 237);
+}
+
+.exercise-goal > div {
+    width: 80%;
+
+}
+
+.container {
+    padding-bottom: 10%;
+}
+
+.exercise_background {
+	margin-top: 5%;
+	left: 5%;
+	width: 100%;
+	height: 90%;
+    padding: 5%;
+	border-radius: 4px;
+	background:rgba(247.56,247.56,247.56,1);
+    border-radius: 7%;
+}
+
+.exercise_background > div {
+    height: 30%;
+	overflow: hidden;
+	font-size: 11.5px;
+	text-align: left;
+}
+
+#excercise_detected {
+    font-weight: bold;
+    height: 16%;
+	overflow: hidden;
+	font-size: 11.5px;
+	text-align: left;
+}
+
+.standar-goal-background {
+    background-color: rgb(255, 255, 255);
+}
+
+.standar-goal-box {
+    width: 110%;
+    background-color: rgba(247.56,247.56,247.56,1);
+
+}
+
+#activity {
+    margin-left: 83%;
+    margin-top: -120%;
+}
+
+#el1 {
+    position:relative;
+    top:3vh;
+    left: 1vh;
+}
+
+#_6_hrs_70_ p {
+    position: relative;
+    margin-left: 65%;
+	overflow: hidden;
+	font-size: 18px;
+	text-align: left;
+}
+
+#stand_goal p {
+    position: relative;
+    margin-top: -50%;
+    margin-left: 25%;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	font-size: 18px;
+	text-align: left;
+}
+
+.exercise-length-goal {
+    background-color: rgb(255, 255, 255);
+}
+
+.exercise-length-goal-box {
+    margin-left: 5%;
+    width: 100%;
+    background-color: rgba(247.56,247.56,247.56,1);
+}
+
+#length_goal p {
+    position: relative;
+    margin-top: -53%;
+    margin-left: -10%;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	font-size: 15px;
+	text-align: center;
+}
+
+#_45min_100 p {
+    position: relative;
+    margin-left: 55%;
+	overflow: hidden;
+	font-size: 18px;
+	text-align: center;
+}
+
+.adjust-button {
+    margin-top: 3%;
+    margin-left: 30%;
+}
+
+#button, #loadmore {
+    border: none;
+    background-color: rgb(187, 217, 244);
+    font-size: 20px;
+    padding: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 3vw;
+}
+
+.calories-equivalent {
+    background-color: rgba(247.56,247.56,247.56,1);
+}
+
+#equivalent p {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#equivalent h6 {
+    margin-top: -22%;
+    margin-left: 33%;
+    font-size: 12px;
+}
+
+#equivalent h5 {
+    font-weight: 400;
+    text-align: right;
+    margin-right: 5%;
+    margin-top: -3%;
+    font-size: 14px;
+    padding-bottom: 5%;
+}
+
+#equivalent img {
+    margin-top: 4%;
+}
+
+#d1, #d2, #d3 {
+    background-color: rgb(222, 222, 223);
+}
+
+.lines {
+    color: #62a5d4;
+    text-align: center;
+    font-weight: 600;
+}
+
+.courses img {
+    width: 48%;
+}
+
+.courses h5 {
+    text-align: center;
+    padding-right: 9%;
+}
