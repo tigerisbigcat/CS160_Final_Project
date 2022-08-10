@@ -1,178 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nutrition Calculator</title>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="index.css" />
     <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-            crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
     />
     <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
-</head>
+  </head>
 
-<body>
-<!-- Home Page -->
-<div class=""></div>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"
-></script>
+  <body>
+    <!-- Home Page -->
+    <div class=""></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
 
-<script>
-    function BMICalculation() {
+    <script>
+      function BMICalculation() {
         let height = document.getElementById("height").value;
         let weight = parseInt(document.getElementById("weight").value);
         let a = height.split("'");
         let feet = parseInt(a[0]);
         let inch = parseInt(a[1]) + feet * 12;
-        let bmi = Math.round(weight / Math.pow(inch, 2) * 703);
+        let bmi = Math.round((weight / Math.pow(inch, 2)) * 703);
         let color = "#72C1FB";
         if (bmi > 25) {
-            color = "#EB7F78";
+          color = "#EB7F78";
         } else if (bmi > 18) {
-            color = "#92D699";
+          color = "#92D699";
         }
-        document.getElementById('bmi_index').style.color = color;
-        document.getElementById('bmi_index').innerHTML = bmi.toString();
-    }
-</script>
+        document.getElementById("bmi_index").style.color = color;
+        document.getElementById("bmi_index").innerHTML = bmi.toString();
+      }
+    </script>
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
         <p>More</p>
         <div id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <ul class="d-flex">
-                <i class="bi bi-list"></i>
-            </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <ul class="d-flex">
+            <i class="bi bi-list"></i>
+          </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<main>
-    <div class="container overflow-auto">
+    <main>
+      <div class="container overflow-auto">
         <div class="row align-items-center">
-            <div class="col-2">
-                <i class="bi bi-person-circle" style="font-size: 5rem; margin-top: 1rem; color: #72C1FB;"></i>
+          <div class="col-2">
+            <i
+              class="bi bi-person-circle"
+              style="font-size: 5rem; margin-top: 1rem; color: #72c1fb"
+            ></i>
+          </div>
+          <div class="col-4" style="font-size: 2rem">Cal_Bear</div>
+          <div class="col-2"></div>
+          <div class="col-4">
+            <div class="row justify-content-md-center">
+              <div class="col-12 text-center" style="font-size: 1.5rem">
+                Day 12
+              </div>
             </div>
-            <div class="col-4" style="font-size: 2rem;">
-                Cal_Bear
+            <div class="row justify-content-md-center">
+              <div
+                class="col-12 text-center"
+                style="font-size: 1.5rem; opacity: 0.5"
+              >
+                Lost 2 kg
+              </div>
             </div>
-            <div class="col-2">
-            </div>
-            <div class="col-4">
-                <div class="row justify-content-md-center">
-                    <div class="col-12 text-center" style="font-size: 1.5rem;">Day 12</div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col-12 text-center" style="font-size: 1.5rem; opacity: 0.5;">Lost 2 kg</div>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="row align-items-center">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Change Plan</li>
-                <li class="list-group-item">Edit Profile</li>
-                <li class="list-group-item">Invite Friends</li>
-            </ul>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Change Plan</li>
+            <li class="list-group-item">Edit Profile</li>
+            <li class="list-group-item">Invite Friends</li>
+          </ul>
         </div>
         <div class="row align-items-center">
-            <br>
+          <br />
         </div>
         <div class="row align-items-center">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">BMI Calculator</li>
-                <li class="list-group-item">
-                    <div class="image-plain">
-                        <div>
-                            <div class="bmi_input">
-                                <div style="width: 33%; horiz-align: center">
-                                    <div class="center-horizontal">
-                                        <p>Age:</p>
-                                        <p><input type="text" value="24" id="age" class="input"
-                                                  onchange="BMICalculation()">
-                                        </p>
-                                        <p>Height:</p>
-                                        <p><input type="text" value="5'11''" id="height" class="input"
-                                                  onchange="BMICalculation()"></p>
-                                    </div>
-                                </div>
-                                <img src="images/body_icon.png" alt="body_icon" style="width: 33%; height: auto">
-                                <div style="width: 33%">
-                                    <div class="center-horizontal">
-                                        <p>Gender:</p>
-                                        <p>
-                                            <label>
-                                                <input type="radio" name="gender" value="M" checked>M
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="gender" value="F" style="margin-left: 30px">F
-                                            </label>
-                                        </p>
-                                        <p>Weight:</p>
-                                        <p style="display: flex">
-                                            <input type="text" value="162" id="weight" class="input"
-                                                   onchange="BMICalculation()">
-                                            <span>lb</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="position: relative">
-                                <img style="height: 100%; width: 100%" src="images/BMI_graph.png" alt="bmi_graph">
-                                <div id="bmi_index" class="bmi_index"></div>
-                            </div>
-                        </div>
-                        <!--                        <img src="images/BMI_Calculator.png" alt="BMI_Calculator"/>-->
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">BMI Calculator</li>
+            <li class="list-group-item">
+              <div class="image-plain">
+                <div>
+                  <div class="bmi_input">
+                    <div style="width: 33%; horiz-align: center">
+                      <div class="center-horizontal">
+                        <p>Age:</p>
+                        <p>
+                          <input
+                            type="text"
+                            value="24"
+                            id="age"
+                            class="input"
+                            onchange="BMICalculation()"
+                          />
+                        </p>
+                        <p>Height:</p>
+                        <p>
+                          <input
+                            type="text"
+                            value="5'11''"
+                            id="height"
+                            class="input"
+                            onchange="BMICalculation()"
+                          />
+                        </p>
+                      </div>
                     </div>
-                </li>
-            </ul>
+                    <img
+                      src="images/body_icon.png"
+                      alt="body_icon"
+                      style="width: 33%; height: auto"
+                    />
+                    <div style="width: 33%">
+                      <div class="center-horizontal">
+                        <p>Gender:</p>
+                        <p>
+                          <label>
+                            <input
+                              type="radio"
+                              name="gender"
+                              value="M"
+                              checked
+                            />M
+                          </label>
+                          <label>
+                            <input
+                              type="radio"
+                              name="gender"
+                              value="F"
+                              style="margin-left: 30px"
+                            />F
+                          </label>
+                        </p>
+                        <p>Weight:</p>
+                        <p style="display: flex">
+                          <input
+                            type="text"
+                            value="162"
+                            id="weight"
+                            class="input"
+                            onchange="BMICalculation()"
+                          />
+                          <span>lb</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="position: relative">
+                    <img
+                      style="height: 100%; width: 100%"
+                      src="images/BMI_graph.png"
+                      alt="bmi_graph"
+                    />
+                    <div id="bmi_index" class="bmi_index"></div>
+                  </div>
+                </div>
+                <!--                        <img src="images/BMI_Calculator.png" alt="BMI_Calculator"/>-->
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="row align-items-center">
-            <br>
+          <br />
         </div>
         <div class="row align-items-center">
-            <div class="d-grid gap-2">
-                <button class="btn btn-danger btn-lg" type="button">Log out</button>
-            </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-danger btn-lg" type="button">Log out</button>
+          </div>
         </div>
-    </div>
-</main>
-</body>
+      </div>
+    </main>
+  </body>
 
-<footer>
+  <footer>
     <div class="boxfooter">
-        <a href="index.html">
-            <img src="images/summary.png" alt="summary"/>
-            <div class="boxfootertext">Summary</div>
-        </a
-        >
+      <a href="index.html">
+        <img src="images/summary.png" alt="summary" />
+        <div class="boxfootertext">Summary</div>
+      </a>
     </div>
     <div class="boxfooter">
-        <a href="nutrition.html">
-            <img src="images/nutrition.png" alt="nutrition"/>
-            <div class="boxfootertext">Nutrition</div>
-        </a
-        >
+      <a href="nutrition.html">
+        <img src="images/nutrition.png" alt="nutrition" />
+        <div class="boxfootertext">Nutrition</div>
+      </a>
     </div>
     <div class="boxfooter">
-        <a href="exercise.html">
-            <img src="images/exercise.png" alt="exercise"/>
-            <div class="boxfootertext">Exercise</div>
-        </a
-        >
+      <a href="exercise.html">
+        <img src="images/exercise.png" alt="exercise" />
+        <div class="boxfootertext">Exercise</div>
+      </a>
     </div>
     <div class="boxfooter" id="more">
-        <img src="images/more.png" alt="more"/>
-        <div class="boxfootertext">More</div>
+      <img src="images/more.png" alt="more" />
+      <div class="boxfootertext">More</div>
     </div>
-</footer>
+  </footer>
 </html>
