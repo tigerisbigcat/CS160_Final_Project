@@ -1,46 +1,74 @@
-function invokeAdd(mealType) {
-    currentMeal = mealType;
-    localStorage.setItem('mealType', mealType);
+window.onload = function() {
+    // initiate macros
+    if (sessionStorage.getItem("cal") == null) {
+        sessionStorage.setItem("cal", "0");
+    }
+    if (sessionStorage.getItem("protein") == null) {
+        sessionStorage.setItem("protein", "0");
+    }
+    if (sessionStorage.getItem("fat") == null) {
+        sessionStorage.setItem("fat", "0");
+    }
+    if (sessionStorage.getItem("carbs") == null) {
+        sessionStorage.setItem("carbs", "0");
+    }
+    if (document.URL.includes("nutrition.html")) {
+        var nutritionPage = sessionStorage.getItem("nutrition.html");
+        if (nutritionPage == null) {
+            sessionStorage.setItem("nutrition.html", document.querySelector("html").innerHTML);
+        } else {
+            document.querySelector('html').innerHTML = nutritionPage;
+        }
+    }
 }
 
-function addToNutrition() {
-    location.href = "nutrition.html";
-    var mealtype = localStorage.getItem('mealType');
+function invokeAdd(mealType) {
+    currentMeal = mealType;
+    sessionStorage.setItem('mealType', mealType);
+}
+
+function addToNutrition(id) {
+    var foodInfo = createJson(id);
+    saveMacros(foodInfo);
+    window.location = "nutrition.html";
+    var mealtype = sessionStorage.getItem('mealType');
     if (mealtype == 'breakfast') {
-        breakfastId = localStorage.getItem("breakfastId");
+        breakfastId = sessionStorage.getItem("breakfastId");
         if (breakfastId == null) {
-            localStorage.setItem('breakfastId', 'breakfast0');
+            sessionStorage.setItem('breakfastId', 'breakfast0');
         } else {
             id = parseInt(breakfastId.slice(-1)) + 1;
-            localStorage.setItem('breakfastId', 'breakfast' + id.toString());
-            alert(localStorage.getItem("breakfastId"));
+            sessionStorage.setItem('breakfastId', 'breakfast' + id.toString());
         }
-        replaceFoodDiv(breakfastId);
+        breakfastId = sessionStorage.getItem('breakfastId');
+        replaceFoodDiv(breakfastId, foodInfo);
     } else if (mealtype == "lunch") {
-        lunchId = localStorage.getItem("lunchId");
+        lunchId = sessionStorage.getItem("lunchId");
         if (lunchId == null) {
-            localStorage.setItem('lunchId', 'lunch0');
+            sessionStorage.setItem('lunchId', 'lunch0');
+            lunchId = 'lunch0';
         } else {
             id = parseInt(lunchId.slice(-1)) + 1;
-            localStorage.setItem('lunchId', 'lunch' + id.toString());
-            alert(localStorage.getItem("lunchId"));
+            sessionStorage.setItem('lunchId', 'lunch' + id.toString());
         }
-        replaceFoodDiv(lunchId);
+        lunchId = sessionStorage.getItem('lunchId');
+        replaceFoodDiv(lunchId, foodInfo);
     } else if (mealtype == "dinner") {
-        dinnerId = localStorage.getItem("dinnerId");
+        dinnerId = sessionStorage.getItem("dinnerId");
         if (dinnerId == null) {
-            localStorage.setItem('dinnerId', 'dinner0');
+            sessionStorage.setItem('dinnerId', 'dinner0');
+            dinnerId = 'dinner0';
         } else {
             id = parseInt(dinnerId.slice(-1)) + 1;
-            localStorage.setItem('dinnerId', 'dinner' + id.toString());
-            alert(localStorage.getItem("dinnerId"));
+            sessionStorage.setItem('dinnerId', 'dinner' + id.toString());
         }
-        replaceFoodDiv(dinnerId);
+        lunchId = sessionStorage.getItem('dinnerId');
+        replaceFoodDiv(dinnerId, foodInfo);
     }
     
 }
 
-function replaceFoodDiv(targetId) {
+function replaceFoodDiv(targetId, foodInfo) {
     var mainDiv = document.createElement('div');
     mainDiv.classList.add('row', 'g-o');
     mainDiv.style.width = "160%";
@@ -62,12 +90,12 @@ function replaceFoodDiv(targetId) {
     var cardTitle = document.createElement('h5');
     cardTitle.className = "card-title";
     cardTitle.style.fontSize = "50%";
-    cardTitle.innerText = "Quaker Oats Insant Oatmeal";
+    cardTitle.innerText = foodInfo.label;
 
     var cardNutrition = document.createElement('p');
     cardNutrition.className = "card-text";
     cardNutrition.style.fontSize = "70%";
-    cardNutrition.innerText = "aaaaaaaaaaaaa%";
+    cardNutrition.innerText = "cal: " + foodInfo.cal + "\nprotein: " + foodInfo.protein + "\nfat: " + foodInfo.fat + "\ncarbs" + foodInfo.carbs;
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardNutrition);
@@ -76,16 +104,51 @@ function replaceFoodDiv(targetId) {
     mainDiv.appendChild(imgDiv);
     mainDiv.appendChild(cardDivContainer);
 
-    document.getElementById(targetId).innerHTML = mainDiv;
-    // <div class="row g-0" style="width:160%; height:100%;">
-    //                   <div class="col-4">
-    //                     <img src="images/summary.png" class="img-fluid rounded-start" style="width: 90%; height: 60%;">
-    //                   </div>
-    //                   <div class="col-8">
-    //                     <div class="card-body">
-    //                       <h5 class="card-title" style="font-size: 50%;">Quaker Oats Insant Oatmeal 8oz</h5>
-    //                       <p class="card-text" style="font-size: 70%;">Cal: 200 cals<br>Protein: 4 g<br>Fat: 0 g <br>Carbs: 24 g</p>
-    //                     </div>
-    //                   </div>
-    //                 </div>
+    var nutritionPage = sessionStorage.getItem('nutrition.html');
+    var doc = new DOMParser().parseFromString(nutritionPage, "text/html");
+    doc.getElementById(targetId).innerHTML = '';
+    doc.getElementById(targetId).appendChild(mainDiv);
+    sessionStorage.setItem('nutrition.html', doc.querySelector("html").innerHTML);
+
+    document.getElementById(targetId).innerHTML = 'mainDiv';
+    document.getElementById(targetId).appendChild(mainDiv);
+}
+
+function createJson(id) {
+    var targetId = ".card-body-" + id.toString();
+    var targetHtml = document.querySelector(targetId).innerHTML;
+    var targetContent = new DOMParser().parseFromString(targetHtml, "text/html");
+    var cardTitle = targetContent.getElementsByClassName("card-title")[0].textContent;
+    var cardNutrition = targetContent.getElementsByClassName("card-text")[0].textContent;
+    var arr = cardNutrition.split(" ");
+    var newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (parseInt(arr[i]) >= 0) {
+            newArr.push(arr[i]);
+        }
+    }
+
+    var result = {};
+    result.label = cardTitle;
+    result.cal = newArr[0];
+    result.protein = newArr[1];
+    result.fat = newArr[2];
+    result.carbs = newArr[3];
+
+    // alert(JSON.stringify(newArr));
+
+    return result;
+}
+
+function saveMacros(foodInfo) {
+    var cal = sessionStorage.getItem("cal");
+    var protein = sessionStorage.getItem("protein");
+    var fat = sessionStorage.getItem("fat");
+    var carbs = sessionStorage.getItem("carbs");
+
+    sessionStorage.setItem("cal", (parseFloat(foodInfo.cal) + parseFloat(cal)).toString());
+    sessionStorage.setItem("protein", (parseFloat(foodInfo.protein) + parseFloat(protein)).toString());
+    sessionStorage.setItem("fat", (parseFloat(foodInfo.fat) + parseFloat(fat)).toString());
+    sessionStorage.setItem("carbs", (parseFloat(foodInfo.carbs) + parseFloat(carbs)).toString());
 }
