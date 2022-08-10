@@ -15,6 +15,68 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      var calories = 2400;
+      var amount = 200;
+
+      var chartLeft = 60;
+      
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Source', 'Grams'],
+          ['Fat',     60],
+          ['Carbohydrates',      60],
+          ['Proteins',  80]
+        ]);
+
+        var options = {
+          pieHole: 0.85,
+          legend: {position: 'right'},
+          slices: {
+            0: { color: '#6E8DA5' },
+            1: { color: '#8AC8F6' },
+            2: { color: '#CBE2F2' }
+          },
+          chartArea: {
+            left: chartLeft
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Nutrition');
+        data.addColumn('number', 'Value');
+        data.addRows([
+          ['Carbs',  {v: 10000, f: '___'}],
+          ['Sugar',   {v:8000,   f: '___'}],
+          ['Calories', {v: 12500, f: '___'}],
+          ['GI',   {v: 7000,  f: '___'}]
+        ]);
+
+        var macros = document.querySelector('#macros-div');
+        var cli = chart.getChartLayoutInterface();
+        var boundingBox = cli.getChartAreaBoundingBox();
+        var overlayTexts = document.querySelector('.overlay');
+        overlayTexts.style.marginLeft = (boundingBox.width * (0.37) - chartLeft).toString() + "px";
+        document.querySelector('#calories').textContent = calories.toString();
+        document.querySelector('#amount').textContent = amount.toString() + " g";
+
+        macros.style.marginLeft = (boundingBox.width - chartLeft).toString() + "px";
+        macros.style.width = (boundingBox.width / 2).toString() + "px";
+        macros.style.marginTop = (-boundingBox.height).toString() + "px";
+
+        var table = new google.visualization.Table(document.getElementById('macros-div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+    </script>
   </head>
 
   <body>
@@ -44,6 +106,21 @@
           <img src="images/nutrition_top.png" alt="nutrition_top" />
         </div>
         <div class="row justify-content-md-left">
+          <div class="col-12">
+            <div class="chartWithOverlay">
+              <div id="donutchart" style="width: 100%; height: 400px;"></div>
+              <div class="overlay">
+                <div class="text-center" style="font-size: 32px; font-weight:bold; margin-top:60px;">Calories</div>
+                <div class="text-center" id="calories" style="font-size: 32px;">#</div>
+                <div class="text-center" style="font-size: 24px;">Amount</div>
+                <div class="text-center" id="amount" style="font-size: 24px;">#</div>
+              </div>
+              <div class="text-center" id="macros-div">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-md-left" style="margin-top: 150px;">
           <div class="col-12 text-center">
             <div class="nutrition-row">
               <div class="row justify-content-md-left">

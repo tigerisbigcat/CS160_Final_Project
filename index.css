@@ -228,3 +228,40 @@ footer {
 .nutrition-row .row {
     padding-bottom: 10px;
 }
+
+.btn-primary {
+    --bs-btn-color: var(--bs-black) !important;
+    --bs-btn-bg: #CBE2F2 !important;
+    --bs-btn-border-color: #CBE2F2 !important;
+    --bs-btn-hover-color: var(--bs-black) !important;
+    --bs-btn-hover-bg: rgba(203, 226, 242, 0.6) !important;
+    --bs-btn-hover-border-color: rgba(203, 226, 242, 0.6) !important;
+    --bs-btn-focus-shadow-rgb: rgba(203, 226, 242, 0.8) !important;
+    --bs-btn-active-color: var(--bs-btn-hover-color) !important;
+    --bs-btn-active-bg: rgba(203, 226, 242, 0.4) !important;
+    --bs-btn-active-border-color: rgba(203, 226, 242, 0.4) !important;
+}
+
+.alert {
+    --bs-alert-border: 1px solid #000000 !important;
+}
+
+.chartWithOverlay {
+    position: relative;
+    width: 600px;
+}
+
+.overlay {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 60px;
+}
+
+#macro-div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 30px;
+}
+
