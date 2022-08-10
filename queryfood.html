@@ -25,7 +25,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-
+    <script src="index.js"></script>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <p style="padding-left: 6%"></p>
@@ -42,13 +42,13 @@
       <div class="container overflow-auto">
         <div class="row justify-content-md-left">
           <div class="search-bar">
-            <form action="searchfood.html">
+            <form action="queryfood.html">
               <input class="round center" type="search" style="background-color:white;">
             </form>
           </div>
         </div>
         <ul class="list-group list-group-flush overflow-auto">
-          <li class="list-group-item">
+          <li class="list-group-item" onclick="addToNutrition()">
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-4">
@@ -62,7 +62,7 @@
                 </div>
               </div>
             </div></li>
-          <li class="list-group-item">
+          <li class="list-group-item" onclick="addToNutrition()">
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-4">
@@ -76,7 +76,7 @@
                 </div>
               </div>
             </div></li>
-          <li class="list-group-item">
+          <li class="list-group-item" onclick="addToNutrition()">
             <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-4">

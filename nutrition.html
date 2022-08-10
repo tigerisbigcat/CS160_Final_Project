@@ -25,7 +25,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-
+    <script src="index.js"></script>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <p style="padding-left: 6%">Nutrition Calculator</p>
@@ -49,11 +49,16 @@
               <div class="row justify-content-md-left">
                 <div class="col-3 text-center">Breakfast</div>
                 <div class="col-2">
-                  <a href="queryfood.html" type="button" class="btn btn-primary">add</a>
+                  <a 
+                  href="searchfood.html" 
+                  type="button" 
+                  class="btn btn-primary"
+                  name="breakfast"
+                  onclick="invokeAdd(this.name)">add</a>
                 </div>
               </div>
               <div class="row justify-content-md-left">
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="breakfast0">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -69,7 +74,7 @@
                   </svg>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="breakfast1">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -85,7 +90,7 @@
                   </svg>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="breakfast2">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -105,11 +110,16 @@
               <div class="row justify-content-md-left">
                 <div class="col-3 text-center">Lunch</div>
                 <div class="col-2">
-                  <a href="queryfood.html" type="button" class="btn btn-primary">add</a>
+                  <a 
+                  href="searchfood.html" 
+                  type="button" 
+                  class="btn btn-primary"
+                  name="lunch"
+                  onclick="invokeAdd(this.name)">add</a>
                 </div>
               </div>
               <div class="row justify-content-md-left">
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="lunch0">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -125,7 +135,7 @@
                   </svg>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="lunch1">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -141,7 +151,7 @@
                   </svg>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="lunch2">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -161,11 +171,16 @@
               <div class="row justify-content-md-left">
                 <div class="col-3 text-center">Dinner</div>
                 <div class="col-2">
-                  <a href="queryfood.html" type="button" class="btn btn-primary">add</a>
+                  <a 
+                  href="searchfood.html" 
+                  type="button" 
+                  class="btn btn-primary" 
+                  onclick="invokeAdd(this.name)"
+                  name="dinner">add</a>
                 </div>
               </div>
               <div class="row justify-content-md-left">
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="dinner0">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -181,7 +196,7 @@
                   </svg>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="dinner1">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
@@ -197,7 +212,7 @@
                   </svg>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-3 text-center">
+                <div class="col-3 text-center" id="dinner2">
                   <svg
                     class="bd-placeholder-img rounded float-start"
                     width="160%"
