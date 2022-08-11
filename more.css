@@ -1,0 +1,251 @@
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width: 100%;
+    }
+  }
+
+body {
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+  
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 80vh;
+    height: -webkit-fill-available;
+    max-height: 80vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+.navbar {
+    background-color: rgb(204, 224, 252);
+    height: 80px;
+    position: fixed;
+  }
+
+.navbar p {
+    font-size: 35px;
+    margin-top: 3%;
+    margin-bottom: 1rem;
+    width: 78%;
+    letter-spacing: -2px;
+    padding-left: 10%;
+}
+
+/* 三 icon setting */
+.container-fluid {
+    /* padding-right: calc(var(--bs-gutter-x) * 0.5); */
+    /* padding-left: calc(var(--bs-gutter-x) * 5); */
+    margin-top: calc(var(--bs-gutter-x) * (-0.3));
+    text-align: center;
+}
+
+.navbar p #nutrition_p {
+    color: blue;
+    width: 60%;
+    padding-left: 0;
+}
+
+.bi-list {
+    font-size: 40px;
+}
+
+/* header {
+    width: 100%;
+    height: 13vh;
+    margin-top: -80px;
+    background-color: rgb(204, 224, 252);
+    position: fixed;
+}  */
+
+header img {
+    padding-top: 13%;
+    padding-right: 5%;
+    height: 40%;
+    float: right;
+}
+
+.head {
+    padding-top: 7%;
+    font-size: 70px;
+    font-weight:400;
+    letter-spacing: -4px;
+    text-align: center;
+}
+
+/* header {
+    width: 100%;
+    height: 13vh;
+    margin-top: -80px;
+    background-color: rgb(204, 224, 252);
+    position: fixed;
+}  */
+
+header img {
+    padding-top: 13%;
+    padding-right: 5%;
+    height: 40%;
+    float: right;
+}
+
+.head {
+    padding-top: 7%;
+    font-size: 70px;
+    font-weight:400;
+    letter-spacing: -4px;
+    text-align: center;
+}
+
+.index_body {
+    padding-top: 0;
+}
+
+.index_body img {
+    padding-left: 1%;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(204, 224, 252);
+
+    padding-bottom: 1px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-flow: row;
+}
+
+.boxfooter {
+    width: 100%;
+    height: 100%;
+    margin-left: 2px;
+}
+
+.boxfooter a {
+    text-decoration: none;
+    color: black;
+}
+
+#summary, #exercise, #more, #nutrition {
+    background-color: aliceblue;
+}
+
+.boxfooter:hover {
+    background-color: aliceblue;
+}
+
+.boxfooter img {
+    margin-top: 8%;
+    margin-left: 30%;
+    height: 50%;
+}
+
+.boxfootertext {
+    margin-left: 5%;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.entry {
+    position: relative;
+    padding-top: 30px;
+    width: 810px;
+    font-size: 48pt;
+}
+
+.round {
+    border-radius: 35px;
+    border: 1px #000 solid;
+    padding: 5px 5px 5px 25px;
+    height: 90px;
+    width: 100%;
+  }
+
+.add-button {
+    float: right;   
+    position: relative;
+    width: 100px;
+    border-radius: 15px;
+    border: 1px #000 solid; 
+}
+
+.search-bar {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.search-bar-saved-meals {
+    position: absolute;
+    top: 350px;
+    right: 10%;
+}
+
+.search-bar-history {
+    position: absolute;
+    top: 350px;
+    left: 10%;
+}
+
+.search-href {
+    font-size: 48pt;
+}
+
+/*centers an element*/
+.center { 
+    position: relative;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, 0%);
+  }
+
+.food-list {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+}
+
+.food-query{
+    position: relative;
+    display: block;
+    height: 100px;
+    top: 200px;
+    width: 347px;
+}
+
+.image-plain img {
+    padding-left: 2%;
+    width: 95%;
+}
+
+.nutrition-row .row {
+    padding-bottom: 10px;
+}
+
+.bmi_input {
+    display: flex;
+}
+
+.bmi_index {
+    position: absolute;
+    font-size: 60px;
+    bottom: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+.center-horizontal {
+    width: 50%;
+    margin: auto;
+}
+
+.input {
+    width: 100px;
+}
