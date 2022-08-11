@@ -234,3 +234,9 @@ footer {
     top: 30px;
 }
 
+
+/* search food page */
+#search-food-button {
+    margin-right: 5%;
+    margin-top: -2%;
+}
