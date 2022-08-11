@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Query Food</title>
@@ -43,58 +45,53 @@
         <div class="row justify-content-md-left">
           <div class="search-bar">
             <form action="queryfood.html">
-              <input class="round center" type="search" style="background-color:white;">
+              <input class="round center" type="search" style="background-color:white;" id="query" onkeyup="searchFood()">
             </form>
           </div>
         </div>
         <ul class="list-group list-group-flush overflow-auto" id="test">
-          <li class="list-group-item" onclick="addToNutrition(this.id)" id="0">
-            <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-4">
-                  <img src="images/summary.png" class="img-fluid rounded-start" style="width: 100%;">
-                </div>
-                <div class="col-8">
-                  <div class="card-body-0">
-                    <h5 class="card-title">Quaker Oats Insant Oatmeal 8oz</h5>
-                    <p class="card-text">calories: 200 cals<br>protein: 4 g<br>fat: 0 g <br>carbs: 24 g</p>
-                  </div>
-                </div>
-              </div>
-            </div></li>
-          <li class="list-group-item" onclick="addToNutrition(this.id)" id="1">
-            <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-4">
-                  <img src="images/summary.png" class="img-fluid rounded-start" style="width: 100%;">
-                </div>
-                <div class="col-8">
-                  <div class="card-body-1">
-                    <h5 class="card-title">Amazon Basics Maple Syrup Oatmeal 20oz</h5>
-                    <p class="card-text">calories: 280 cals<br>protein: 16 g<br>fat: 6 g <br>carbs: 4 g</p>
-                  </div>
-                </div>
-              </div>
-            </div></li>
-          <li class="list-group-item" onclick="addToNutrition(this.id)" id="2">
-            <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-4">
-                  <img src="images/summary.png" class="img-fluid rounded-start" style="width: 100%;">
-                </div>
-                <div class="col-8">
-                  <div class="card-body-2">
-                    <h5 class="card-title">Quaker Oats Steel Oats</h5>
-                    <p class="card-text">calories: 160 cals<br>protein: 30 g<br>fat: 10 g <br>carbs: 0 g</p>
-                  </div>
-                </div>
-              </div>
-            </div></li>
-          <li class="list-group-item text-center"><button type="button" class="btn btn-primary btn-lg">Load More</button></li>
         </ul>
 
       </div>
     </main>
+
+    <script type="text/javascript">
+      function searchFood() {
+          $('#test').find('.list-group-item').remove();
+          var query = document.getElementById("query").value;
+          console.log(query);
+          $.ajax({
+              method: 'GET',
+              url: 'https://api.calorieninjas.com/v1/nutrition?query=' + query,
+              headers: { 'X-Api-Key': "8Wt8ILcbIE0Vvqwjmy9HLg==gCb14TZErX8dL2Ff"},
+              contentType: 'application/json',
+              success: function(result) {
+                  for (i = 0; i < result.items.length; i++) {
+                      console.log(result.items[i]);
+                      $("#test").append(
+                        `<li class="list-group-item" onclick="addToNutrition(this.id)" id="0">
+                          <div class="card mb-3">
+                            <div class="row g-0">
+                              <div class="col-4">
+                                <img src="images/summary.png" class="img-fluid rounded-start" style="width: 100%;">
+                              </div>
+                              <div class="col-8">
+                                <div class="card-body-0">
+                                  <h5 class="card-title">${result.items[i].name}</h5>
+                                  <p class="card-text">calories: ${result.items[i].calories}<br>protein: ${result.items[i].protein_g}<br>fat: ${result.items[i].fat_total_g}<br>carbs: ${result.items[i].carbohydrates_total_g}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div></li>`
+                      )
+                    }
+              },
+              error: function ajaxError(jqXHR) {
+                  console.error('Error: ', jqXHR.responseText);
+              }
+          });
+      }
+  </script>
   </body>
 
   <footer>
