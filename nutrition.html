@@ -19,7 +19,10 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       var calories = 2400 - parseInt(sessionStorage.getItem('cal'));
-      var amount = parseInt(sessionStorage.getItem('cal'));
+      var amount = 0 + parseInt(sessionStorage.getItem('cal'));
+      var Fat = 0 + parseInt(sessionStorage.getItem('fat'));
+      var Carbohydrates = 0 + parseInt(sessionStorage.getItem('carbs'));
+      var Proteins = 0 + parseInt(sessionStorage.getItem('protein'));
 
       var chartLeft = 60;
       
@@ -29,9 +32,9 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Source', 'Grams'],
-          ['Fat',     parseInt(sessionStorage.getItem('fat'))],
-          ['Carbohydrates',  parseInt(sessionStorage.getItem('carbs'))],
-          ['Proteins',  parseInt(sessionStorage.getItem('protein'))]
+          ['Fat',     Fat == 0 ? 1 : Fat],
+          ['Carbohydrates',  Carbohydrates == 0 ? 1 : Carbohydrates],
+          ['Proteins',  Proteins == 0 ? 1 : Proteins]
         ]);
 
         var options = {
