@@ -234,3 +234,10 @@ footer {
     top: 30px;
 }
 
+.back {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    top: 4%;
+    left: 2%;   
+}
