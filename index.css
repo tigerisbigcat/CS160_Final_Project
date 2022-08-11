@@ -241,3 +241,10 @@ footer {
     top: 4%;
     left: 2%;   
 }
+
+/* search food page */
+#search-food-button {
+    margin-right: 5%;
+    margin-top: -2%;
+    width: 90%;
+}
