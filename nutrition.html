@@ -16,69 +16,87 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
     <script type="text/javascript">
-      var calories = 2400 - parseInt(sessionStorage.getItem('cal'));
-      var amount = 0 + parseInt(sessionStorage.getItem('cal'));
-      var Fat = 0 + parseInt(sessionStorage.getItem('fat'));
-      var Carbohydrates = 0 + parseInt(sessionStorage.getItem('carbs'));
-      var Proteins = 0 + parseInt(sessionStorage.getItem('protein'));
+      var calories = 0 + parseInt(sessionStorage.getItem("cal"));
+      var amount = 0 + parseInt(sessionStorage.getItem("cal"));
+      var Fat = 0 + parseInt(sessionStorage.getItem("fat"));
+      var Carbohydrates = 0 + parseInt(sessionStorage.getItem("carbs"));
+      var Proteins = 0 + parseInt(sessionStorage.getItem("protein"));
 
       var chartLeft = 60;
-      
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.load('current', {'packages':['table']});
+
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.load("current", { packages: ["table"] });
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Source', 'Grams'],
-          ['Fat',     Fat == 0 ? 1 : Fat],
-          ['Carbohydrates',  Carbohydrates == 0 ? 1 : Carbohydrates],
-          ['Proteins',  Proteins == 0 ? 1 : Proteins]
+          ["Source", "Grams"],
+          ["Fat", Fat == 0 ? 1 : Fat],
+          ["Carbohydrates", Carbohydrates == 0 ? 1 : Carbohydrates],
+          ["Proteins", Proteins == 0 ? 1 : Proteins],
         ]);
 
         var options = {
           pieHole: 0.85,
-          legend: {position: 'right'},
+          legend: { position: "right" },
           slices: {
-            0: { color: '#6E8DA5' },
-            1: { color: '#8AC8F6' },
-            2: { color: '#CBE2F2' }
+            0: { color: "#6E8DA5" },
+            1: { color: "#8AC8F6" },
+            2: { color: "#CBE2F2" },
           },
           chartArea: {
-            left: chartLeft
-          }
+            left: chartLeft,
+          },
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.PieChart(
+          document.getElementById("donutchart")
+        );
         chart.draw(data, options);
 
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Nutrition');
-        data.addColumn('number', 'Value');
+        data.addColumn("string", "Nutrition");
+        data.addColumn("number", "Value");
         data.addRows([
-          ['Carbs',  {v: 10000, f: sessionStorage.getItem('carbs')}],
-          ['Sugar',   {v:8000,   f: sessionStorage.getItem('carbs')}],
-          ['Calories', {v: 12500, f: sessionStorage.getItem('cal')}]
+          ["Carbs", { v: 10000, f: sessionStorage.getItem("carbs") }],
+          ["Sugar", { v: 8000, f: sessionStorage.getItem("carbs") }],
+          ["Calories", { v: 12500, f: sessionStorage.getItem("cal") }],
           // ['GI',   {v: 7000,  f: '___'}]
         ]);
 
-        var macros = document.querySelector('#macros-div');
+        var macros = document.querySelector("#macros-div");
         var cli = chart.getChartLayoutInterface();
         var boundingBox = cli.getChartAreaBoundingBox();
-        var overlayTexts = document.querySelector('.overlay');
-        var overlayTextsMarginLeft = boundingBox.width * (0.39) - chartLeft;
-        overlayTexts.style.marginLeft = overlayTextsMarginLeft.toString() + "px";
-        document.querySelector('#calories').textContent = calories.toString();
-        document.querySelector('#amount').textContent = amount.toString() + " g";
+        var overlayTexts = document.querySelector(".overlay");
+        var overlayTextsMarginLeft = boundingBox.width * 0.39 - chartLeft;
+        overlayTexts.style.marginLeft =
+          overlayTextsMarginLeft.toString() + "px";
+        document.querySelector("#calories").textContent = calories.toString();
+        document.querySelector("#amount").textContent =
+          amount.toString() + " g";
 
-        macros.style.marginLeft = (-overlayTextsMarginLeft + boundingBox.left + boundingBox.width).toString() + "px";
+        macros.style.marginLeft =
+          (
+            -overlayTextsMarginLeft +
+            boundingBox.left +
+            boundingBox.width
+          ).toString() + "px";
         macros.style.width = (boundingBox.width / 2).toString() + "px";
         macros.style.marginTop = (-boundingBox.height).toString() + "px";
 
-        var table = new google.visualization.Table(document.getElementById('macros-div'));
+        var table = new google.visualization.Table(
+          document.getElementById("macros-div")
+        );
 
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        table.draw(data, {
+          showRowNumber: true,
+          width: "100%",
+          height: "100%",
+        });
       }
     </script>
   </head>
@@ -112,30 +130,40 @@
         <div class="row justify-content-md-left">
           <div class="col-12">
             <div class="chartWithOverlay">
-              <div id="donutchart" style="width: 100%; height: 400px;"></div>
+              <div id="donutchart" style="width: 100%; height: 400px"></div>
               <div class="overlay">
-                <div class="text-center" style="font-size: 16px; font-weight:bold; margin-top:60px;">Calories</div>
-                <div class="text-center" id="calories" style="font-size: 16px;">#</div>
-                <div class="text-center" style="font-size: 12px;">Amount</div>
-                <div class="text-center" id="amount" style="font-size: 12px;">#</div>
+                <div
+                  class="text-center"
+                  style="font-size: 16px; font-weight: bold; margin-top: 60px"
+                >
+                  Calories
+                </div>
+                <div class="text-center" id="calories" style="font-size: 16px">
+                  #
+                </div>
+                <div class="text-center" style="font-size: 12px">Amount</div>
+                <div class="text-center" id="amount" style="font-size: 12px">
+                  #
+                </div>
               </div>
-              <div class="text-center" id="macros-div">
-              </div>
+              <div class="text-center" id="macros-div"></div>
             </div>
           </div>
         </div>
-        <div class="row justify-content-md-left" style="margin-top: 150px;">
+        <div class="row justify-content-md-left" style="margin-top: 150px">
           <div class="col-12 text-center">
             <div class="nutrition-row">
               <div class="row justify-content-md-left">
                 <div class="col-3 text-center">Breakfast</div>
                 <div class="col-2">
-                  <a 
-                  href="searchfood.html" 
-                  type="button" 
-                  class="btn btn-primary"
-                  name="breakfast"
-                  onclick="invokeAdd(this.name)">add</a>
+                  <a
+                    href="searchfood.html"
+                    type="button"
+                    class="btn btn-primary"
+                    name="breakfast"
+                    onclick="invokeAdd(this.name)"
+                    >add</a
+                  >
                 </div>
               </div>
               <div class="row justify-content-md-left">
@@ -191,12 +219,14 @@
               <div class="row justify-content-md-left">
                 <div class="col-3 text-center">Lunch</div>
                 <div class="col-2">
-                  <a 
-                  href="searchfood.html" 
-                  type="button" 
-                  class="btn btn-primary"
-                  name="lunch"
-                  onclick="invokeAdd(this.name)">add</a>
+                  <a
+                    href="searchfood.html"
+                    type="button"
+                    class="btn btn-primary"
+                    name="lunch"
+                    onclick="invokeAdd(this.name)"
+                    >add</a
+                  >
                 </div>
               </div>
               <div class="row justify-content-md-left">
@@ -252,12 +282,14 @@
               <div class="row justify-content-md-left">
                 <div class="col-3 text-center">Dinner</div>
                 <div class="col-2">
-                  <a 
-                  href="searchfood.html" 
-                  type="button" 
-                  class="btn btn-primary" 
-                  onclick="invokeAdd(this.name)"
-                  name="dinner">add</a>
+                  <a
+                    href="searchfood.html"
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="invokeAdd(this.name)"
+                    name="dinner"
+                    >add</a
+                  >
                 </div>
               </div>
               <div class="row justify-content-md-left">
