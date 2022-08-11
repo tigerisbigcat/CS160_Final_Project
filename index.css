@@ -237,7 +237,7 @@ footer {
 .back {
     width: 64px;
     height: 64px;
-    position: relative;
+    position: absolute;
     top: 4%;
     left: 2%;   
 }
