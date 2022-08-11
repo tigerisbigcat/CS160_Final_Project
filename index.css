@@ -217,14 +217,14 @@ footer {
 
 .chartWithOverlay {
     position: relative;
-    width: 600px;
+    width: 100%;
 }
 
 .overlay {
     width: 200px;
     height: 200px;
     position: absolute;
-    top: 60px;
+    top: 100px;
 }
 
 #macro-div {
