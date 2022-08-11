@@ -152,3 +152,27 @@ function saveMacros(foodInfo) {
     sessionStorage.setItem("fat", (parseFloat(foodInfo.fat) + parseFloat(fat)).toString());
     sessionStorage.setItem("carbs", (parseFloat(foodInfo.carbs) + parseFloat(carbs)).toString());
 }
+
+// function removeFood() {
+
+    // <div class="col-3 text-center" id="breakfast2">
+    //               <svg
+    //                 class="bd-placeholder-img rounded float-start"
+    //                 width="160%"
+    //                 height="60%"
+    //                 xmlns="http://www.w3.org/2000/svg"
+    //                 role="img"
+    //                 aria-label="Placeholder: 200x200"
+    //                 preserveAspectRatio="xMidYMid slice"
+    //                 focusable="false"
+    //               >
+    //                 <title>Placeholder</title>
+    //                 <rect width="100%" height="100%" fill="#868e96"></rect>
+    //               </svg>
+    //             </div>
+// }
+
+function addChicken()
+{
+    
+}
